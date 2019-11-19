@@ -1,0 +1,19 @@
+﻿
+@model List<Weatherforecast>
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+@foreach (var weather in Model)
+{
+    <div class="my-4 ">
+        <h3>@weather.Summary</h3>
+        <div> @weather.Date</div>
+        <div> @weather.TemperatureC</div>
+
+    </div>
+}
