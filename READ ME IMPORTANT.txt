@@ -1,0 +1,22 @@
+Така това е проекта които съм започнал. Съдържа се от два проекта като цяло. Технологията е ASP.NET Core 3.0.
+1) Първия проект е ASP.NET Core API. Тука ще го извикаме API - то. (ще го опиша по долу, намерих безплатно API за карти).
+Данните които сме ги получили ги подаваме към втория проект.
+
+2) Втория проект е ASP.NET Core Web Application. Тук получаваме данните от API - то, ги обработваме по някъкв начин и
+трябва да ги претставим на фронт - енд. 
+В момента сме много далече от целта тъй като като API съм извикал тестовото което се генерира от самото Visual Studio за
+време. За момента нека да стой, а като си извикаме нащето API ще го изтрием. Нещтата който сега се опитах да ги претставам 
+на фронтенда се в страничката Privacy. Работеше но сега нещо ми гърми с NullPointer Exception. Но то няма значение, така
+или иначе ще го триеме.
+
+API - то което намерих е : https://rapidapi.com/raygorodskij/api/YandexStatic
+
+var client = new RestClient("https://yandexstaticraygorodskijv1.p.rapidapi.com/getStaticMap");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-rapidapi-host", "YandexStaticraygorodskijV1.p.rapidapi.com");
+request.AddHeader("x-rapidapi-key", "19e1e0d130mshb78d98fe74a16b9p1b5617jsn8dfc7cf70600");
+request.AddHeader("content-type", "application/x-www-form-urlencoded");
+request.AddParameter("application/x-www-form-urlencoded", "mapType=card&mapCenter=56%2021", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+
+Така че може да действате. 
